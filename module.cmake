@@ -1,0 +1,6 @@
+message(STATUS "Loading cmake module: Wayland")
+include(${CMAKE_MODULE_WAYLAND_DIR}/FindWaylandProtocols.cmake)
+if(NOT DEFINED AURORAFW_IS_BUILDING)
+	find_package(WaylandProtocols)
+endif()
+install(FILES ${CMAKE_MODULE_WAYLAND_DIR}/FindWaylandProtocols.cmake DESTINATION share/cmake/Wayland )
